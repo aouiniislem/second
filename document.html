@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Bootstrap Page</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    body {
+    background-color: hsl(0, 0%, 100%);
+}
+
+.jumbotron {
+    background-color: #bcddd2;
+    color: #ffffff;
+    padding: 50px;
+    margin-bottom: 0;
+}
+
+.card {
+    border: none;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-top: 10px;
+}
+
+.card-text {
+    font-size: 0.9rem;
+}
+
+/* Centering the cards on larger screens */
+@media (min-width: 768px) {
+    .row {
+        justify-content: center;
+    }
+}
+h1 {
+        font-size: 32px; 
+        color: #333;
+        margin-top: 20px;
+        text-align: center;
+
+    }
+    p {
+        font-size: 16px;
+        color: #0c0000;
+        text-align: center;
+        line-height: 1.6; 
+    }
+
+</style>
+</head>
+<body> 
+     <!-- Jumbotron -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Bienvenue a la page de document!</h1>
+            <h1 class="display-4"></h1>
+            <p class="lead">This is a simple Bootstrap page with a navbar, jumbotron, and cards.</p>
+        </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="cnam.html"><img src="https://th.bing.com/th/id/R.f7c26c19dde78ec4f46067b22a40d812?rik=4zRzlTstRIpVDw&riu=http%3a%2f%2fi.huffpost.com%2fgen%2f4458220%2fimages%2fo-CNAM-facebook.jpg&ehk=G%2bSGTUMj4PrIvQaxXq6HoYiExFCEhIebLGiFUmX5tPA%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="Card 1"></a>
+                        <h5 class="card-title">document CNAM</h5>
+                        <p class="card-text">des information sur le document CNAM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <a href="cni.html"> <img src="https://th.bing.com/th/id/OIP.aKLDp5jzC5rxn56ahNSzHgHaD4?pid=ImgDet&rs=1" class="card-img-top" alt="Card 2"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Changement de CNI</h5>
+                        <p class="card-text">comment peut-en changer vos CNI?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <a href="contrat.html"><img src="https://cdn.slidesharecdn.com/ss_thumbnails/contrat-travail-150518130808-lva1-app6891-thumbnail-4.jpg?cb=1451897228" class="card-img-top" alt="Card 4"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">contrat de travail</h5>
+                        <p class="card-text">decouvrir les Types de contrat de travail</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Add Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'avance sur salaire</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    /* styles.css */
+
+/* Style the form container */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+
+/* Style input fields */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Style submit button */
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Style form labels */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Style form headings */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+</style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Formulaire d'avance sur salaire</h1>
+        <form>
+            <div class="form-group">
+                <label for="nom" class="font-weight-bold">Nom :</label>
+                <input type="text" id="nom" name="nom" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom" class="font-weight-bold">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="service" class="font-weight-bold">Service :</label>
+                <input type="text" id="service" name="service" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="montant" class="font-weight-bold">Montant :</label>
+                <input type="number" id="montant" name="montant" class="form-control" required>
+            </div>
+            <button id="sendButton" class="btn btn-primary">Envoyer</button>
+        </form>
+    </div>
+    <script>
+        // Get references to the input fields
+        const nomInput = document.getElementById("nom");
+        const prenomInput = document.getElementById("prenom");
+        const serviceInput = document.getElementById("service");
+        const montantInput = document.getElementById("montant");
+
+        // Get reference to the form
+        const form = document.querySelector("form");
+
+        // Add submit event listener to the form
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Generate the information entered by the user
+            const nom = nomInput.value;
+            const prenom = prenomInput.value;
+            const service = serviceInput.value;
+            const montant = montantInput.value;
+            // Construct the email subject and body
+            const subject = "Demande d'avance sur salaire";
+            const body = `Nom: ${nom}\nPrénom: ${prenom}\nService: ${service}\nMontant: ${montant}`;
+
+            // Create a mailto link
+            const mailtoLink = `mailto:islem@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // Open the mail client
+            window.location.href = mailtoLink;
+        });
+    </script>
+</body>
+</html>

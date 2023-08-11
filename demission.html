@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'une lettre de démission</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulaire d'une lettre de démission</h1>
+    <form>
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required><br>
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required><br>
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="post_occupe">Poste occupé :</label>
+        <input type="text" id="post_occupe" name="post_occupe" required><br>
+        <label for="date_arrivee">Date d'arrivée dans l'entreprise :</label>
+        <input type="date" id="date_arrivee" name="date_arrivee" required><br>
+        <label for="date_sortie">Date de sortie de l'entreprise :</label>
+        <input type="date" id="date_sortie" name="date_sortie" required><br>
+    </form>
+    <button id="sendButton" class="btn btn-primary">Envoyer la lettre de démission</button>
+    <script>
+           // Get references to the input fields
+    const nomInput = document.getElementById("nom");
+    const prenomInput = document.getElementById("prenom");
+    const postOccupeInput = document.getElementById("post_occupe");
+    const dateArriveeInput = document.getElementById("date_arrivee");
+    const dateSortieInput = document.getElementById("date_sortie");
+
+    // Get reference to the send button
+    const sendButton = document.getElementById("sendButton");
+
+    // Add click event listener to the send button
+    sendButton.addEventListener("click", function() {
+        // Generate the information entered by the user
+        const nom = nomInput.value;
+        const prenom = prenomInput.value;
+        const postOccupe = postOccupeInput.value;
+        const dateArrivee = dateArriveeInput.value;
+        const dateSortie = dateSortieInput.value;
+
+        // Construct the email subject and body
+        const subject = "Lettre de Démission";
+        const body = `Nom: ${nom}\nPrénom: ${prenom}\nPoste Occupé: ${postOccupe}\nDate d'Arrivée: ${dateArrivee}\nDate de Sortie: ${dateSortie}`;
+
+        // Create a mailto link
+        const mailtoLink = `mailto:islem@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        // Open the mail client
+        window.location.href = mailtoLink;
+    });
+    </script>
+</body>
+</html>
+ 

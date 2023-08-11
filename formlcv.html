@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire CV</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulaire CV</h1>
+    <form id="cvForm">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required>
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required>
+        <label for="formations">Formations :</label>
+        <input type="text" id="formations" name="formations" required>
+        <label for="stages">Stages :</label>
+        <input type="text" id="stages" name="stages" required>
+        <label for="experience">Expérience professionnelle :</label>
+        <input type="text" id="experience" name="experience" required>
+        <label for="diplome">Diplôme :</label>
+        <input type="text" id="diplome" name="diplome" required>
+        <button id="sendButton" class="btn btn-primary">Envoyer le CV</button>
+    </form>
+
+    <script>
+        // Get references to the input fields
+    const nomInput = document.getElementById("nom");
+    const prenomInput = document.getElementById("prenom");
+    const formationsInput = document.getElementById("formations");
+    const stagesInput = document.getElementById("stages");
+    const experienceInput = document.getElementById("experience");
+    const diplomeInput = document.getElementById("diplome");
+
+    // Get reference to the send button
+    const sendButton = document.getElementById("sendButton");
+
+    // Add click event listener to the send button
+    sendButton.addEventListener("click", function() {
+        // Generate the information entered by the user
+        const nom = nomInput.value;
+        const prenom = prenomInput.value;
+        const formations = formationsInput.value;
+        const stages = stagesInput.value;
+        const experience = experienceInput.value;
+        const diplome = diplomeInput.value;
+
+        // Construct the email subject and body
+        const subject = "CV Submission";
+        const body = `Nom: ${nom}\nPrénom: ${prenom}\nFormations: ${formations}\nStages: ${stages}\nExpérience professionnelle: ${experience}\nDiplôme: ${diplome}`;
+
+        // Create a mailto link
+        const mailtoLink = `mailto:recepient@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        // Open the mail client
+        window.location.href = mailtoLink;
+    });
+    </script>
+</body>
+</html>

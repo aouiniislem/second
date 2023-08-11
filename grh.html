@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Bootstrap Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+     p {
+        font-size: 16px;
+        color: #0c0000;
+        text-align: center;
+        line-height: 1.6; 
+    }
+.navbar {
+    background-color: #333;
+}
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    margin-right: 20px;
+}
+.jumbotron {
+    background-color: rgb(186, 144, 226);
+    padding: 40px;
+}
+
+/* Apply styles to the cards */
+.card {
+    border: none;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    font-size: 18px;
+}
+
+.card-text {
+    font-size: 14px;
+}
+h1 {
+        font-size: 32px; 
+        color: #333;
+        margin-top: 20px;
+        text-align: center;
+
+    }
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">page d'acueil</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="document.html">Document</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Bienvenue sur mon page web!</h1>
+            <p class="lead">ma page web est a votre disposition </p>
+        </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="avances.html"><img src="https://th.bing.com/th/id/OIP.dFPBnH-wdKno_U43ONXSfQHaE8?pid=ImgDet&rs=1" class="card-img-top" alt="Card 1"></a>
+                         <h5 class="card-title">demande d'avance sur salaire</h5>
+                        <p class="card-text">suivi des avance sur salaire</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="conges.html"><img src="https://th.bing.com/th/id/R.4169cfbfb563fbc2455da51c3e43de15?rik=7A590MA2196XVw&riu=http%3a%2f%2futcfecgc.nc%2fwp-content%2fuploads%2f2020%2f04%2flVMG6UzKHA.jpg&ehk=ttyDSMH4bAYtGWFLueUJJQ8Cv9vHMk1SDFX3GSS%2bV7c%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="Card 2"></a>
+                        <h5 class="card-title">demande de conges</h5>
+                        <p class="card-text">decouvrir les different types de conges</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="formlCV.html"><img src="https://th.bing.com/th/id/R.4698588b5cd98fb5fb9474082683aee9?rik=MTGpYeaRRgGszA&pid=ImgRaw&r=0s" class="card-img-top" alt="Card 3" class="card-img-top" alt="Card 3"></a>
+                        <h5 class="card-title">demande d'un resume/CV</h5>
+                        <p class="card-text">creer vous cv professionnel  </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="demission.html"><img src="https://business.lesechos.fr/medias/2018/07/24/322449_contrats-de-travail-quels-sont-les-motifs-de-rupture-en-vogue-12612125-k4.jpeg" class="card-img-top" alt="Card 4"></a>
+                        <h5 class="card-title">demande de demission</h5>
+                        <p class="card-text">remplir la lettre de demission</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="certificat.html"><img src="https://th.bing.com/th/id/R.5a2c229b85e4fde5bc204b3b5ed16120?rik=sKjEsMLC9IeUOg&riu=http%3a%2f%2fnkairalawfirm.com%2fwp-content%2fuploads%2f2020%2f05%2fcertififcat.jpg&ehk=tuSOT%2fogAJb1OpBYgLlEee8hRiB%2f7uFLKzSGwz8EFdM%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="Card 6"></a>
+                        <h5 class="card-title"> demander un Certificats de travail</h5>
+                        <p class="card-text">attestation employeur modele</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="performance.html"><img src="https://th.bing.com/th/id/R.28977e52dec328e05f435abd45533e41?rik=sYU3u8NiM15Uqg&pid=ImgRaw&r=0" class="card-img-top" alt="Card 7"></a>
+                        <h5 class="card-title">fiche d'Évaluations de performance</h5>
+                        <p class="card-text">mener une Évaluations de performance efficace</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="formation.html"><img src="https://th.bing.com/th/id/R.883b80cb9d63b62c4334aa9546aeb78a?rik=XH7FATfUX7YS%2bQ&pid=ImgRaw&r=0" class="card-img-top" alt="Card 8"></a>
+                        <h5 class="card-title">Formation professionnelle</h5>
+                        <p class="card-text">facteur de competitivite et d'emploi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

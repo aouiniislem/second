@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Évaluations de performance</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulaire d'Évaluations de performance</h1>
+        <form id="evaluationForm">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required>
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" required>
+            <fieldset>
+                <legend>ÉVALUATION DE PERFORMANCE :</legend>
+                <input type="checkbox" name="PERFORMANCE" value="excellent">Excellent
+                <input type="checkbox" name="PERFORMANCE" value="good">Good
+                <input type="checkbox" name="PERFORMANCE" value="average">Average
+                <input type="checkbox" name="PERFORMANCE" value="poor">Poor
+            </fieldset>
+            <button id="sendButton" class="btn btn-primary">Envoyer le formulaire</button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        const form = document.getElementById("evaluationForm");
+        const nomInput = document.getElementById("nom");
+        const prenomInput = document.getElementById("prenom");
+        const sendButton = document.getElementById("sendButton");
+
+        sendButton.addEventListener("click", function(event) {
+            event.preventDefault();
+
+            const nom = nomInput.value;
+            const prenom = prenomInput.value;
+
+            const subject = "Évaluation de performance";
+            let body = `Nom: ${nom}\nPrénom: ${prenom}\nÉvaluation: `;
+
+            const performanceCheckboxes = form.querySelectorAll('input[name="PERFORMANCE"]:checked');
+            const performanceValues = Array.from(performanceCheckboxes).map(checkbox => checkbox.value);
+            body += performanceValues.join(', ');
+
+            const mailtoLink = `mailto:recepient@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            window.location.href = mailtoLink;
+        });
+    });
+    </script>
+</body>
+</html>
